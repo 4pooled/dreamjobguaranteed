@@ -4,7 +4,6 @@ import { jobs } from "@/server/db.json";
 
 export default function JobPostCardGrid() {
   const serverJobs = jobs as JobPost[];
-
   return (
     <section className="container mx-auto px-4 py-16 space-y-4">
       <h2 className="text-3xl font-bold">Jobbys</h2>
