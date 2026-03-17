@@ -1,4 +1,5 @@
 import Image from "next/image";
+import CreatePostModal from "@/components/ui/modals/create-jobpost-form";
 
 export default function Home() {
   return (
@@ -59,6 +60,7 @@ export default function Home() {
             Documentation
           </a>
         </div>
+        <CreatePostModal></CreatePostModal>
       </main>
     </div>
   );
