@@ -1,4 +1,4 @@
-Project: dreamjobguaranteed: Group 4 - Date: 2026-03-17
+Project: dreamjobguaranteed: Group 4 - Date: 2026-03-17 </br>
 Naming convention
 - kebab-case
 - sidebar-aside
