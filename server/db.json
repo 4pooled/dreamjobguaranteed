@@ -1,5 +1,48 @@
 {
-  "test": {
-    "name": "Hej"
-  }
+  "jobs": [
+    {
+      "id": 1,
+      "title": "Front-End Web Developer",
+      "description": "Join a dynamic tech startup to develop responsive web applications using React and modern JavaScript frameworks. Collaborate with designers and back-end developers to create seamless user experiences. Remote-friendly options available.",
+      "category": "Engineering / Development",
+      "hyperlink": "https://example.com/jobs/frontend-web-developer",
+      "companyHyperlink": "https://example.com/companies/tech-startup",
+      "createdByUserId": 101,
+      "createdAt": "2026-03-10T09:15:00Z",
+      "updatedAt": "2026-03-15T14:22:00Z"
+    },
+    {
+      "id": 2,
+      "title": "Marketing Specialist",
+      "description": "Seeking a marketing specialist to manage social media campaigns, email marketing, and content creation. Ideal candidate has experience in analytics and brand strategy. Fast-paced environment with growth opportunities.",
+      "category": "Marketing",
+      "hyperlink": "https://example.com/jobs/marketing-specialist",
+      "companyHyperlink": "https://example.com/companies/marketing-agency",
+      "createdByUserId": 102,
+      "createdAt": "2026-03-08T11:30:00Z",
+      "updatedAt": "2026-03-12T16:45:00Z"
+    },
+    {
+      "id": 3,
+      "title": "Data Analyst",
+      "description": "Analyze complex datasets to provide actionable insights for business decisions. Must be proficient in SQL, Python, and data visualization tools. Strong problem-solving and communication skills required.",
+      "category": "Data / Analytics",
+      "hyperlink": "https://example.com/jobs/data-analyst",
+      "companyHyperlink": "https://example.com/companies/data-solutions",
+      "createdByUserId": 103,
+      "createdAt": "2026-03-12T08:20:00Z",
+      "updatedAt": "2026-03-16T10:05:00Z"
+    },
+    {
+      "id": 4,
+      "title": "Customer Success Manager",
+      "description": "Drive customer satisfaction and retention by managing client relationships and onboarding processes. Strong interpersonal skills and experience in SaaS environments preferred. Competitive benefits and team-oriented culture.",
+      "category": "Customer Success / Support",
+      "hyperlink": "https://example.com/jobs/customer-success-manager",
+      "companyHyperlink": "https://example.com/companies/saas-corp",
+      "createdByUserId": 104,
+      "createdAt": "2026-03-11T14:10:00Z",
+      "updatedAt": "2026-03-14T12:00:00Z"
+    }
+  ]
 }
