@@ -5,7 +5,7 @@ export default function MainNavigation() {
     <nav className="flex justify-between items-center py-4 px-2 sm:px-4 bg-gray-700">
       <div className="relative w-10 h-10">
         <img
-          className="rounded-full curosr-pointer"
+          className="rounded-full cursor-pointer"
           src="https://i.pravatar.cc/40"
           alt=""
         />
