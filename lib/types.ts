@@ -6,8 +6,8 @@ export interface JobPost {
     hyperlink?: string;
     companyHyperlink?: string;
     createdByUserId?: number;
-    createdAt: Date;
-    updatedAt: Date;
+    createdAt: string;
+    updatedAt: string;
 }
 
 export interface User {
@@ -15,6 +15,6 @@ export interface User {
     userName: string;
     password: string;
     role: string;
-    createdAt: Date;
-    updatedAt: Date;
+    createdAt: string;
+    updatedAt: string;
 }
