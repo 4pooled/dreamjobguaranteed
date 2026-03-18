@@ -40,45 +40,45 @@ export default function EditPostModal({ jobPost }: { jobPost: JobPost }) {
       </button>
 
       <Modal isOpen={isOpen} onClose={handleClose}>
-        <h2 className="text-black text-2xl mb-10 text-center">Edit post</h2>
+        <h2 className="text-white text-2xl mb-10 text-center">Edit post</h2>
         <form onSubmit={handleSubmit} className="flex flex-col flex-1">
           <div className="flex flex-col gap-5">
             <input
               placeholder="Title"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              className="text-black w-[20%] border-2 border-black rounded-lg"
+              className="text-white w-[20%] border-2 border-white rounded-lg"
             />
             <textarea
               placeholder="Description"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
-              className="text-black min-h-[200px] w-full resize-y border-2 border-black rounded-lg"
+              className="text-white min-h-[200px] w-full resize-y border-2 border-white rounded-lg"
             />
             <input
               placeholder="Category"
               value={category}
               onChange={(e) => setCategory(e.target.value)}
-              className="text-black w-[20%] border-2 border-black rounded-lg"
+              className="text-white w-[20%] border-2 border-white rounded-lg"
             />
             <input
               placeholder="Link"
               value={hyperlink}
               onChange={(e) => setHyperlink(e.target.value)}
-              className="text-black w-[20%] border-2 border-black rounded-lg"
+              className="text-white w-[20%] border-2 border-white rounded-lg"
             />
           </div>
           <div className="ml-auto mt-auto flex gap-2">
             <button
               type="button"
               onClick={handleClose}
-              className="px-5 py-2 bg-white text-black rounded-xl border-2 border-black"
+              className="px-5 py-2 bg-white text-black hover:scale-[1000%] duration-1000 hover:animate-spin-once rounded-xl border-2 border-black"
             >
               Cancel
             </button>
             <button
               type="submit"
-              className="px-5 py-2 bg-white text-black rounded-xl border-2 border-black"
+              className="px-5 py-2 bg-white text-black hover:scale-[1000%] duration-1000 hover:animate-spin-once transition-all rounded-xl border-2 border-black"
             >
               Save
             </button>
