@@ -3,7 +3,7 @@ import { useState } from "react";
 
 import { createPost } from "@/lib/actions";
 
-function Modal({
+export function Modal({
   isOpen,
   onClose,
   children,
