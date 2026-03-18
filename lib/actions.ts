@@ -25,6 +25,8 @@ export async function createPost(formData: {
 
   file.jobs.push(newPost);
   fs.writeFileSync(filePath, JSON.stringify(file, null, 2));
+    revalidatePath("/");
+
 }
 
 export async function updatePost(formData: {
