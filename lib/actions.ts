@@ -1,6 +1,8 @@
 "use server";
 import fs from "fs";
 import path from "path";
+import { updatePostById } from "./db";
+import { revalidatePath } from "next/cache";
 
 export async function createPost(formData: {
   title: string;
@@ -25,20 +27,20 @@ export async function createPost(formData: {
   fs.writeFileSync(filePath, JSON.stringify(file, null, 2));
 }
 
-export async function updatePost(id: number, formData: {
+export async function updatePost(formData: {
+  id: number,
   title: string;
   description: string;
   category: string;
   hyperlink: string;
 }) {
- // denna funktion måste skapas med för att kunna uppdatera poster, så som du gjort ovan
- 
-  const filePath = path.join(process.cwd(), "server", "db.json");
-  const file = JSON.parse(fs.readFileSync(filePath, "utf-8"));
+  // Call updatePostById with the id from formData, and pass the updated fields
+  await updatePostById(formData.id, {
+    // Spread operator to put the existing formData fields into the new object
+    ...formData,
+    // Override updatedAt with current timestamp
+    updatedAt: new Date().toISOString(),
+  });
 
-  // 1. hitta index för post som ska uppdateras
-  
-
-
-  // 2. uppdatera objektet, men behåll gamla värden som inte ska uppdateras
+  revalidatePath("/");
 }
