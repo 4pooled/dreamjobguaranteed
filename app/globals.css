@@ -10,6 +10,8 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  --animate-spin-once: spin 0.5s ease-out;
 }
 
 @media (prefers-color-scheme: dark) {
