@@ -67,26 +67,40 @@ export default function CreatePostModal() {
         <form onSubmit={handleSubmit} className="flex flex-col flex-1">
           <div className="flex flex-col gap-5">
             <input
+              minLength={3}
+              maxLength={20}
+              spellCheck={true}
+              pattern="[A-Za-z0-9\s\-']+"
+              title="Letters, numbers, spaces, hyphens and apostrophes only"
               placeholder=" Title"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               className="text-black w-[20%] border-2 border-black rounded-lg"
+              required
             />
             <textarea
+              spellCheck={true}
+              minLength={20}
+              maxLength={500}
               placeholder=" Description"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               className="text-black min-h-[200px] w-full resize-y border-2 border-black rounded-lg"
+              required
             />
 
             <input
               placeholder=" Category"
+              pattern="[A-Za-z\s]+"
+              title="Letters and spaces only"
               value={category}
               onChange={(e) => setCategory(e.target.value)}
               className="text-black w-[20%] border-2 border-black rounded-lg"
+              required
             />
             <input
-              placeholder=" Link"
+              type="url"
+              placeholder=" https://..."
               value={hyperlink}
               onChange={(e) => setHyperlink(e.target.value)}
               className="text-black w-[20%] border-2 border-black rounded-lg"
@@ -103,7 +117,6 @@ export default function CreatePostModal() {
             </button>
             <button
               type="submit"
-              onClick={handleSubmit}
               className="px-5 py-2 bg-white text-black rounded-xl border-2 border-black"
             >
               Create
