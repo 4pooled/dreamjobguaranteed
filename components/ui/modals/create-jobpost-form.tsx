@@ -300,7 +300,7 @@ function Modal({
       onClick={onClose}
     >
       <div
-        className="bg-background text-foreground border border-border shadow-lg p-8 rounded-lg w-[40%] min-h-[60%] flex flex-col"
+        className="bg-background text-foreground border border-border shadow-lg p-8 rounded-lg w-[40%] min-h-[60%] flex flex-col "
         onClick={(e) => e.stopPropagation()}
         style={{
           backgroundImage: "url('/cool-cat-169ish.png')",
@@ -309,7 +309,9 @@ function Modal({
         }}
       >
         <div className="absolute inset-0 bg-black/30 rounded-lg" />
-        <div className="relative z-10 flex flex-col flex-1">{children}</div>
+        <div className="relative z-10 flex flex-col flex-1 transition-transform duration-300 focus-within:[transform:scaleX(-1)]">
+          {children}
+        </div>
       </div>
     </div>
   );
@@ -341,7 +343,7 @@ export default function CreatePostModal() {
       <Button onClick={() => setIsOpen(true)}>New</Button>
 
       <Modal isOpen={isOpen} onClose={handleClose}>
-        <h2 className="text-2xl font-semibold mb-8 text-center text-white">
+        <h2 className="text-3xl font-semibold mb-8 text-center text-white">
           Create a new post
         </h2>
         <form onSubmit={handleSubmit} className="flex flex-col flex-1 gap-6 ">
@@ -349,7 +351,7 @@ export default function CreatePostModal() {
             <div className="flex flex-col gap-2">
               <label
                 htmlFor="title"
-                className="text-white text-sm font-medium ml-1"
+                className="text-white text-xl font-medium ml-1"
               >
                 Title
               </label>
@@ -364,14 +366,14 @@ export default function CreatePostModal() {
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
                 required
-                className="placeholder:text-white/80"
+                className="placeholder:text-white/80 text-white text-lg"
               />
             </div>
 
             <div className="flex flex-col flex-1 gap-2">
               <label
                 htmlFor="description"
-                className="text-white text-sm font-medium ml-1"
+                className="text-white text-xl font-medium ml-1"
               >
                 Description
               </label>
@@ -383,7 +385,7 @@ export default function CreatePostModal() {
                 placeholder="Describe the role, responsibilities, and what you're looking for..."
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
-                className="flex-1 resize-none placeholder:text-white/80"
+                className="flex-1 resize-none placeholder:text-white/80 text-white text-lg"
                 required
               />
             </div>
@@ -391,7 +393,7 @@ export default function CreatePostModal() {
             <div className="flex flex-col gap-2">
               <label
                 htmlFor="category"
-                className="text-white text-sm font-medium ml-1"
+                className="text-white text-xl font-medium ml-1"
               >
                 Category
               </label>
@@ -402,7 +404,7 @@ export default function CreatePostModal() {
                 title="Letters and spaces only"
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
-                className="placeholder:text-white/80"
+                className="placeholder:text-white/80 text-white text-lg"
                 required
               />
             </div>
@@ -410,9 +412,9 @@ export default function CreatePostModal() {
             <div className="flex flex-col gap-2">
               <label
                 htmlFor="hyperlink"
-                className="text-white text-sm font-medium ml-1"
+                className="text-white text-xl font-medium ml-1"
               >
-                Hyperlink (optional)
+                Link (optional)
               </label>
               <Input
                 id="hyperlink"
@@ -420,7 +422,7 @@ export default function CreatePostModal() {
                 placeholder="https://yourcompany.com/jobs/123"
                 value={hyperlink}
                 onChange={(e) => setHyperlink(e.target.value)}
-                className="placeholder:text-white/80"
+                className="placeholder:text-white/80 text-white text-lg"
               />
             </div>
           </div>
