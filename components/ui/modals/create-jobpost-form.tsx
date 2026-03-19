@@ -24,7 +24,7 @@ export function Modal({
     >
       <div className="absolute inset-0 -z-1 bg-black/30 rounded-lg" />
       <div
-        className="bg-background text-foreground border border-border shadow-lg p-8 rounded-lg w-[40%] min-h-[60%] flex flex-col transition-transform duration-[2000ms] focus-within:[transform:scaleX(-1)_rotateZ(45deg)] [transform-style:preserve-3d]"
+        className="bg-background text-foreground border border-border shadow-lg p-8 rounded-lg min-w-100 w-[40%] min-h-[60%] flex flex-col transition-transform duration-[2000ms] focus-within:[transform:scaleX(-1)_rotateZ(45deg)] [transform-style:preserve-3d]"
         onClick={(e) => e.stopPropagation()}
         style={{
           backgroundImage: "url('/cool-cat-169ish.png')",
