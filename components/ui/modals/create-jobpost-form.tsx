@@ -61,7 +61,14 @@ export default function CreatePostModal() {
 
   return (
     <>
-      <Button onClick={() => setIsOpen(true)}>New</Button>
+      <div className="flex">
+        <Button
+          className="mx-auto text-2xl leading-none flex items-center justify-center"
+          onClick={() => setIsOpen(true)}
+        >
+          New
+        </Button>
+      </div>
 
       <Modal isOpen={isOpen} onClose={handleClose}>
         <h2 className="text-3xl font-semibold mb-8 text-center text-white">
