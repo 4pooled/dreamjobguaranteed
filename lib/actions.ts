@@ -3,6 +3,7 @@ import fs from "fs";
 import path from "path";
 import { deletePostById, updatePostById } from "./db";
 import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
 
 export async function createPost(formData: {
   title: string;
@@ -50,5 +51,6 @@ export async function deletePost(id: number) {
   const response = await deletePostById(id);
   if (!response) return false;
   revalidatePath("/");
+  redirect("http://localhost:3000/");
   return true;
 }
