@@ -20,9 +20,11 @@ export default function SearchBar() {
   };
 
   return (
-    <section className="w-full">
-      <div>
-        <label htmlFor="search-input">Search:</label>
+    <section className="w-full flex justify-center">
+      <div className="flex flex-col">
+        <label htmlFor="search-input" className="text-center">
+          Search
+        </label>
 
         <input
           type="text"
