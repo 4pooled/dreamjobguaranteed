@@ -20,8 +20,8 @@ export default function JobPostDetail({ postData }: { postData: JobPost }) {
         <br />
         <p className="cursor-pointer">{postData.hyperlink}</p>
         <p className="cursor-pointer">{postData.companyHyperlink}</p>
-        <EditPostModal jobPost={postData}/>
         <DeleteForm id={postData.id}/>
+        <EditPostModal jobPost={postData}/>
       </div>
     </div>
   );
