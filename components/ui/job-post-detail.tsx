@@ -1,6 +1,7 @@
 import { JobPost } from "@/lib/types";
 import Link from "next/link";
 import EditPostModal from "./modals/edit-jobpost-form";
+import { DeleteForm } from "./delete-form";
 
 export default function JobPostDetail({ postData }: { postData: JobPost }) {
   if (!Object.keys(postData).length) {
@@ -20,6 +21,7 @@ export default function JobPostDetail({ postData }: { postData: JobPost }) {
         <p className="cursor-pointer">{postData.hyperlink}</p>
         <p className="cursor-pointer">{postData.companyHyperlink}</p>
         <EditPostModal jobPost={postData}/>
+        <DeleteForm id={postData.id}/>
       </div>
     </div>
   );
