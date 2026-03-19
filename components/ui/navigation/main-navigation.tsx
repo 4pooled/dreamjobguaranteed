@@ -19,14 +19,12 @@ export default function MainNavigation() {
         <span className="absolute top-0 right-0 bg-green-400 size-2.5 rounded-full border border-gray-700"></span>
       </div>
       <Link
-        className={`${macondoFont.className} text-amber-500 sm:text-3xl md:text-4xl text-2xl hover:opacity-80`}
-        href={"#"}
+        className={`${macondoFont.className} text-amber-500 sm:text-3xl md:text-4xl text-2xl hover:opacity-80 hover:animate-bounce transition-all py-0 sm:py-2`}
+        href={"/"}
       >
         Dream Job Guaranteed.
       </Link>
-      <Link className="hover:opacity-80" href={"#"}>
-        Min sida
-      </Link>
+      <span className=""></span>
     </nav>
   );
 }
