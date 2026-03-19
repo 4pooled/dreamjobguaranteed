@@ -1,8 +1,9 @@
 "use server";
 import fs from "fs";
 import path from "path";
-import { updatePostById } from "./db";
+import { deletePostById, updatePostById } from "./db";
 import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
 
 export async function createPost(formData: {
   title: string;
@@ -25,12 +26,11 @@ export async function createPost(formData: {
 
   file.jobs.push(newPost);
   fs.writeFileSync(filePath, JSON.stringify(file, null, 2));
-    revalidatePath("/");
-
+  revalidatePath("/");
 }
 
 export async function updatePost(formData: {
-  id: number,
+  id: number;
   title: string;
   description: string;
   category: string;
@@ -45,4 +45,12 @@ export async function updatePost(formData: {
   });
 
   revalidatePath("/");
+}
+
+export async function deletePost(id: number) {
+  const response = await deletePostById(id);
+  if (!response) return false;
+  revalidatePath("/");
+  redirect("http://localhost:3000/");
+  return true;
 }

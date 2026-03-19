@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Macondo } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import Footer from "@/components/ui/navigation/footer";
 import MainNavigation from "@/components/ui/navigation/main-navigation";
@@ -12,6 +13,14 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const comicFont = localFont({
+  src: "./fonts/Comic_Neue/ComicNeue-Regular.ttf",
+});
+
+const macondoFont = localFont({
+  src: "./fonts/Macondo-Regular.ttf",
 });
 
 export const metadata: Metadata = {
@@ -27,7 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col justify-between min-h-screen `}
+        className={`${geistSans.variable} ${geistMono.variable} ${comicFont.className} antialiased flex flex-col justify-between min-h-screen `}
       >
         <MainNavigation />
         {children}
