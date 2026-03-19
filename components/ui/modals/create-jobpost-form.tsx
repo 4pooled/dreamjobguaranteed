@@ -63,7 +63,7 @@ export default function CreatePostModal() {
     <>
       <div className="flex">
         <Button
-          className="mx-auto text-2xl leading-none flex items-center justify-center"
+          className="mx-auto text-2xl w-40 h-10 leading-none flex items-center justify-center"
           onClick={() => setIsOpen(true)}
         >
           New
