@@ -4,6 +4,7 @@ import { createPost } from "@/lib/actions";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import Cube from "../cube/cube";
 
 export function Modal({
   isOpen,
@@ -21,8 +22,9 @@ export function Modal({
       className="fixed inset-0 bg-black/50 flex items-center justify-center"
       onClick={onClose}
     >
+      <div className="absolute inset-0 -z-1 bg-black/30 rounded-lg" />
       <div
-        className="bg-background text-foreground border border-border shadow-lg p-8 rounded-lg w-[40%] min-h-[60%] flex flex-col "
+        className="bg-background text-foreground border border-border shadow-lg p-8 rounded-lg w-[40%] min-h-[60%] flex flex-col transition-transform duration-[2000ms] focus-within:[transform:scaleX(-1)_rotateZ(45deg)] [transform-style:preserve-3d]"
         onClick={(e) => e.stopPropagation()}
         style={{
           backgroundImage: "url('/cool-cat-169ish.png')",
@@ -30,10 +32,7 @@ export function Modal({
           backgroundPosition: "center",
         }}
       >
-        <div className="absolute inset-0 bg-black/30 rounded-lg" />
-        <div className="relative z-10 flex flex-col flex-1 transition-transform duration-300 focus-within:[transform:scaleX(-1)]">
-          {children}
-        </div>
+        <div className="relative z-10 flex flex-col flex-1 ">{children}</div>
       </div>
     </div>
   );
@@ -68,6 +67,10 @@ export default function CreatePostModal() {
         <h2 className="text-3xl font-semibold mb-8 text-center text-white">
           Create a new post
         </h2>
+        <div className="-z-2 absolute left-[35%] top-[65%] opacity-80 pointer-events-none">
+          <Cube />
+        </div>
+
         <form onSubmit={handleSubmit} className="flex flex-col flex-1 gap-6 ">
           <div className="flex flex-col gap-4 flex-1">
             <div className="flex flex-col gap-2">
@@ -150,6 +153,9 @@ export default function CreatePostModal() {
           </div>
 
           <div className="flex justify-end gap-2 mt-auto">
+            <div className="bg-white rounded-lg flex justify-center items-center px-3 active:scale-95 active:brightness-75 transition-all select-none cursor-pointer hover:scale-105 mr-auto">
+              Click
+            </div>
             <Button variant="outline" type="button" onClick={handleClose}>
               Cancel
             </Button>
