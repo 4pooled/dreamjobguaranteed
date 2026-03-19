@@ -9,6 +9,7 @@ export function DeleteForm({ id }: { id: number }) {
   const [step, setStep] = useState(0);
 
   const clientAction = async () => {
+    await new Promise((resolve) => setTimeout(resolve, 5000)); // Wait 5 seconds
     await deletePost(id);
     setStep(0);
   };
@@ -57,7 +58,7 @@ export function DeleteForm({ id }: { id: number }) {
           onClick={handleClose}
         >
           <div
-            className="bg-white p-8 rounded-lg flex flex-col gap-4 items-center hover:scale-105 transition-all"
+            className="bg-white p-8 rounded-lg flex flex-col gap-4 items-center hover:scale-105 transition-all animate-bounce"
             onClick={(e) => e.stopPropagation()}
           >
             <h2 className="text-black text-xl font-bold">Are you sure?</h2>
@@ -84,13 +85,13 @@ export function DeleteForm({ id }: { id: number }) {
 
       {/* Step 2 — bottom right */}
       {step === 2 && (
-        <div className="fixed bottom-8 right-8 z-50 bg-white border-2 border-red-600 p-6 rounded-lg shadow-2xl flex flex-col gap-4 items-center hover:scale-115 transition-all">
+        <div className="fixed bottom-8 right-8 z-50 bg-white border-2 border-red-600 p-6 rounded-lg shadow-2xl flex flex-col gap-4 items-center hover:scale-115 transition-all animate-ping">
           <h2 className="text-black text-xl font-bold">Are you really sure?</h2>
           <p className="text-gray-500 text-sm">Like, actually sure?</p>
           <div className="flex gap-3">
             <button
               onClick={handleClose}
-              className="px-5 py-2 bg-white text-black rounded-xl border-2 border-black hover:scale-90 cursor-pointer transition-all"
+              className="px-5 py-2 bg-white text-black rounded-xl border-2 border-black hover:scale-90 cursor-pointer transition-all "
             >
               Cancel
             </button>
@@ -106,7 +107,7 @@ export function DeleteForm({ id }: { id: number }) {
 
       {/* Step 3 — bottom left */}
       {step === 3 && (
-        <div className="fixed bottom-8 left-8 z-50 bg-white border-2 border-red-600 p-6 rounded-lg shadow-2xl flex flex-col gap-4 items-center hover:scale-125 transition-all">
+        <div className="fixed bottom-8 left-8 z-50 bg-white border-2 border-red-600 p-6 rounded-lg shadow-2xl flex flex-col gap-4 items-center hover:scale-125 transition-all animate-pulse">
           <h2 className="text-black text-xl font-bold">Are you REALLY sure?</h2>
           <p className="text-gray-500 text-sm">This is your third warning...</p>
           <div className="flex gap-3">
@@ -128,7 +129,7 @@ export function DeleteForm({ id }: { id: number }) {
 
       {/* Step 4 — top right */}
       {step === 4 && (
-        <div className="fixed top-8 right-8 z-50 bg-white border-2 border-red-600 p-6 rounded-lg shadow-2xl flex flex-col gap-4 items-center hover:scale-135 transition-all">
+        <div className="fixed top-8 right-8 z-50 bg-white border-2 border-red-600 p-6 rounded-lg shadow-2xl flex flex-col gap-4 items-center hover:scale-135 transition-all animate-spin">
           <h2 className="text-black text-xl font-bold">
             Okay but like... REALLY though?
           </h2>
@@ -154,7 +155,7 @@ export function DeleteForm({ id }: { id: number }) {
 
       {/* Step 5 — top left */}
       {step === 5 && (
-        <div className="fixed top-8 left-8 z-50 bg-white border-2 border-red-600 p-6 rounded-lg shadow-2xl flex flex-col gap-4 items-center hover:scale-135 transition-all">
+        <div className="fixed top-8 left-8 z-50 bg-white border-2 border-red-600 p-6 rounded-lg shadow-2xl flex flex-col gap-4 items-center hover:scale-135 transition-all animate-caret-blink">
           <h2 className="text-black text-xl font-bold">🚨 FINAL WARNING 🚨</h2>
           <p className="text-gray-500 text-sm">
             There is absolutely no going back. You monster.
