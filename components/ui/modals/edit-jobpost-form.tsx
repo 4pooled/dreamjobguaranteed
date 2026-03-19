@@ -34,7 +34,7 @@ export default function EditPostModal({ jobPost }: { jobPost: JobPost }) {
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className="px-3 py-1 bg-blue-500 text-white rounded-lg transition-all duration-200 hover:scale-110 hover:rotate-2 active:scale-95 hover:bg-purple-500 hover:rounded-xl active:bg-pink-500"
+        className="px-3 py-1 bg-blue-500 text-white rounded-lg transition-all duration-200 hover:scale-110 rotate-45 hover:rotate-90 active:scale-95 hover:bg-purple-500 hover:rounded-xl active:bg-pink-500"
       >
         Edit
       </button>
